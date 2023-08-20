@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="quote"
-            type="com.example.learningarchitecture2.Quote" />
+            name="newmainviewModel"
+            type="com.example.learningarchitecture2.MainviewModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,24 +18,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Quote"
-            android:text="@{quote.text}"
             android:textSize="50sp"
+            android:text="@{newmainviewModel.quoteLiveData}"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Author"
-            android:text="@{quote.author}"
-            android:textSize="45sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="@{()->newmainviewModel.UpdateQuote()}"
+           android:layout_marginTop="16dp"
+           android:id="@+id/btnUpdate"
+           android:text="Update fact"
+/>
 
     </LinearLayout>
 </layout>
